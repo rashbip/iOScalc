@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.IOScalc" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/sfpro</item>
+        <!-- res/values/themes.xml -->
+        <item name="buttonStyle">@style/RoundButton</item>
+
+    </style>
+
+    <style name="Theme.IOScalc" parent="Base.Theme.IOScalc" />
+    <!-- res/values/styles.xml -->
+    <style name="RoundButton" parent="Widget.AppCompat.Button">
+<!--        <item name="android:background">@drawable/button_bg_round</item>-->
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+</resources>

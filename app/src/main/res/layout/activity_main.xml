@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/historyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@null"
+        android:contentDescription="history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/outline_delete_history_24" />
+
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/sfpro"
+        android:text=""
+        android:textAlignment="textEnd"
+        android:textColor="#828282"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textColor="#D4D4D2"
+        app:layout_constrainedHeight="true"
+
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="@+id/topText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/topText"
+        app:layout_constraintTop_toBottomOf="@+id/topText" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        app:constraint_referenced_ids="buttonAC,buttonMemory,buttonPercent,buttonDiv,button7,button8,button9,buttonMult,button4,button5,button6,buttonMinus,button1,button2,button3,buttonPlus,button0,buttonDot,buttonEqual"
+        app:flow_horizontalGap="8dp"
+        app:flow_maxElementsWrap="4"
+        app:flow_verticalGap="10dp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottomText"
+        app:layout_constraintStart_toStartOf="@+id/bottomText"
+        app:layout_constraintTop_toBottomOf="@+id/bottomText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAC"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_white"
+        android:text="AC"
+ style="@style/RoundButton"
+        android:textColor="#1C1C1C" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonMemory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_white"
+        android:text="+/-"
+        android:textColor="#1C1C1C" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPercent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_white"
+        android:text="%"
+        android:textColor="#1C1C1C" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDiv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="÷"
+        android:textColor="#FBFBFD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="7"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="8"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="9"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonMult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="×"
+        android:textColor="#FBFBFD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="4"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="5"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="6"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="-"
+        android:textColor="#FBFBFD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="1"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="2"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="3"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="+"
+        android:textColor="#FBFBFD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cornerRadius="40dp"
+        android:text="0"
+        android:background="@drawable/button_bg_0"
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDot"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_black"
+        android:text="."
+        android:textColor="#D4D4D2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEqual"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/button_bg_orange"
+        android:text="="
+        android:textColor="#FBFBFD" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
