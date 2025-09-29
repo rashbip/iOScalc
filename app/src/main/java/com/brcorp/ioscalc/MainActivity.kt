@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         buttonEqual = findViewById(R.id.buttonEqual)
 
 
-        //AC button
+//AC button
         buttonAC.setOnClickListener {
             textTop.text = ""
             textBottom.text = "0"
@@ -78,75 +78,64 @@ class MainActivity : AppCompatActivity() {
         }
 
         //digits
-        button0.setOnClickListener {
-            expression += "0"
-            textBottom.text = expression
-        }
-        button1.setOnClickListener {
-            expression += "1"
-            textBottom.text = expression
-        }
-        button2.setOnClickListener {
-            expression += "2"
-            textBottom.text = expression
-        }
-        button3.setOnClickListener {
-            expression += "3"
-            textBottom.text = expression
-        }
-        button4.setOnClickListener {
-            expression += "4"
-            textBottom.text = expression
-        }
-        button5.setOnClickListener {
-            expression += "5"
-            textBottom.text = expression
-        }
-        button6.setOnClickListener {
-            expression += "6"
-            textBottom.text = expression
-        }
-        button7.setOnClickListener {
-            expression += "7"
-            textBottom.text = expression
-        }
-        button8.setOnClickListener {
-            expression += "8"
-            textBottom.text = expression
-        }
-        button9.setOnClickListener {
-            expression += "9"
-            textBottom.text = expression
-        }
-        buttonDot.setOnClickListener {
-            expression += "."
-            textBottom.text = expression
-        }
+        fun addDigToExp(button: AppCompatButton, digit: Char) {
+            button.setOnClickListener {
+                expression += digit
+                textBottom.text = expression.drop(1)
+            }
 
+        }
+        addDigToExp(button1, '1')
+        addDigToExp(button2, '2')
+        addDigToExp(button3, '3')
+        addDigToExp(button4, '4')
+        addDigToExp(button5, '5')
+        addDigToExp(button6, '6')
+        addDigToExp(button7, '7')
+        addDigToExp(button8, '8')
+        addDigToExp(button9, '9')
+        addDigToExp(button0, '0')
 
         //operators
-        buttonPlus.setOnClickListener {
-            expression += "+"
-            textBottom.text = expression
+        fun setOpListener(button: AppCompatButton, op: Char) {
+            button.setOnClickListener {
+                if (expression.last() != op && "+-*/.".contains(expression.last()).not()) {
+                    expression += op
+                    textBottom.text = expression.drop(1)
+                }
+            }
         }
-        buttonMinus.setOnClickListener {
-            expression += "-"
-            textBottom.text = expression
-        }
-        buttonMult.setOnClickListener {
-            expression += "*"
-            textBottom.text = expression
-        }
-        buttonDiv.setOnClickListener {
-            expression += "/"
-            textBottom.text = expression
-        }
+        setOpListener(buttonPlus, '+')
+        setOpListener(buttonMinus, '-')
+        setOpListener(buttonMult, '*')
+        setOpListener(buttonDiv, '/')
+        setOpListener(buttonDot, '.')
 
-        //calculation
+//calculation
         buttonEqual.setOnClickListener {
-            textTop.text = expression
-            textBottom.text = expression.keval().toString()
+            if (expression.contains('/')) {
+                Log.d("contains", "onCreate: /") //works
+                if (expression.last() !in "+/-*") {
+                    val afterDiv =
+                        expression.substring(expression.indexOf('/') + 1, expression.lastIndex + 1)
+                    if (afterDiv.toInt() == 0) {
+                        textBottom.text = "Can't devide by zero."
+                        textBottom.textSize = 45f
+                        expression = "0"
+                    } else {
+                        textTop.text = expression
+                        textBottom.text = expression.keval().toString()
+                    }
+                }
+            } else {
+                if (expression.last() !in "+/-*") {
+                    textTop.text = expression
+                    textBottom.text = expression.keval().toString()
+                }
+            }
+
         }
     }
+
 
 }
